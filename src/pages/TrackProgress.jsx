@@ -19,10 +19,14 @@ const TrackProgress = ({ compact }) => {
   const user = JSON.parse(localStorage.getItem("user"));
   const token = localStorage.getItem("token") || user?.token;
 
+  // ✅ Use environment variable for API base URL
+  const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
+
+  // Fetch existing progress
   const fetchProgress = async () => {
     if (!token) return;
     try {
-      const res = await axios.get("http://localhost:5000/api/track", {
+      const res = await axios.get(`${API_BASE}/api/track`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setData(res.data);
@@ -40,6 +44,7 @@ const TrackProgress = ({ compact }) => {
     fetchProgress();
   }, [token]);
 
+  // Add new record
   const handleAddProgress = async (e) => {
     e.preventDefault();
     if (!weight || !bmi) {
@@ -48,7 +53,7 @@ const TrackProgress = ({ compact }) => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/track", {
+      const res = await fetch(`${API_BASE}/api/track`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -75,6 +80,7 @@ const TrackProgress = ({ compact }) => {
     }
   };
 
+  // UI section (same as before)
   const containerClasses = compact
     ? "bg-gray-50 dark:bg-gray-900 flex flex-col items-center p-2 space-y-3 text-sm transition-colors duration-300"
     : "min-h-screen bg-gray-50 dark:bg-gray-900 p-6 flex flex-col items-center transition-colors duration-300";
@@ -90,17 +96,14 @@ const TrackProgress = ({ compact }) => {
   return (
     <div className={containerClasses}>
       <h1
-        className={`font-bold text-green-700 dark:text-green-400 ${compact ? "text-lg mb-3" : "text-3xl mb-8"
-          }`}
+        className={`font-bold text-green-700 dark:text-green-400 ${compact ? "text-lg mb-3" : "text-3xl mb-8"}`}
       >
         Your Fitness Progress
       </h1>
 
-
       <form onSubmit={handleAddProgress} className={cardClasses}>
         <h2
-          className={`text-gray-700 dark:text-gray-200 font-semibold mb-3 ${compact ? "text-base" : "text-xl"
-            }`}
+          className={`text-gray-700 dark:text-gray-200 font-semibold mb-3 ${compact ? "text-base" : "text-xl"}`}
         >
           Add New Progress
         </h2>
@@ -156,16 +159,8 @@ const TrackProgress = ({ compact }) => {
         <div className={chartClasses}>
           <ResponsiveContainer width="100%" height={compact ? 220 : 350}>
             <LineChart data={data}>
-              <CartesianGrid
-                strokeDasharray="3 3"
-                strokeOpacity={0.2}
-                stroke={compact ? "#ccc" : "#666"}
-              />
-              <XAxis
-                dataKey="date"
-                tickFormatter={(d) => new Date(d).toLocaleDateString()}
-                stroke="currentColor"
-              />
+              <CartesianGrid strokeDasharray="3 3" strokeOpacity={0.2} />
+              <XAxis dataKey="date" tickFormatter={(d) => new Date(d).toLocaleDateString()} stroke="currentColor" />
               <YAxis stroke="currentColor" />
               <Tooltip
                 labelFormatter={(d) => new Date(d).toLocaleDateString()}
@@ -175,20 +170,8 @@ const TrackProgress = ({ compact }) => {
                   borderRadius: "8px",
                 }}
               />
-              <Line
-                type="monotone"
-                dataKey="weight"
-                stroke="#16a34a"
-                strokeWidth={compact ? 2 : 3}
-                name="Weight (kg)"
-              />
-              <Line
-                type="monotone"
-                dataKey="bmi"
-                stroke="#8884d8"
-                strokeWidth={compact ? 2 : 3}
-                name="BMI"
-              />
+              <Line type="monotone" dataKey="weight" stroke="#16a34a" strokeWidth={2} name="Weight (kg)" />
+              <Line type="monotone" dataKey="bmi" stroke="#8884d8" strokeWidth={2} name="BMI" />
             </LineChart>
           </ResponsiveContainer>
         </div>
