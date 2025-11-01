@@ -19,10 +19,10 @@ const TrackProgress = ({ compact }) => {
   const user = JSON.parse(localStorage.getItem("user"));
   const token = localStorage.getItem("token") || user?.token;
 
-  // ✅ Use environment variable for API base URL
+  
   const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
 
-  // Fetch existing progress
+ 
   const fetchProgress = async () => {
     if (!token) return;
     try {
@@ -44,7 +44,7 @@ const TrackProgress = ({ compact }) => {
     fetchProgress();
   }, [token]);
 
-  // Add new record
+
   const handleAddProgress = async (e) => {
     e.preventDefault();
     if (!weight || !bmi) {
@@ -80,7 +80,7 @@ const TrackProgress = ({ compact }) => {
     }
   };
 
-  // UI section (same as before)
+  
   const containerClasses = compact
     ? "bg-gray-50 dark:bg-gray-900 flex flex-col items-center p-2 space-y-3 text-sm transition-colors duration-300"
     : "min-h-screen bg-gray-50 dark:bg-gray-900 p-6 flex flex-col items-center transition-colors duration-300";
