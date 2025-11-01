@@ -21,7 +21,7 @@ const FoodCaloriesList = () => {
 
       const searchUrl = `https://api.nal.usda.gov/fdc/v1/foods/search?query=${encodeURIComponent(
         foodName
-      )}&pageSize=5&api_key=${apiKey}`;
+      )}&pageSize=5&api_key=${API_KEY}`;
 
       const res = await fetch(searchUrl);
       if (!res.ok) throw new Error("Failed to fetch data");
