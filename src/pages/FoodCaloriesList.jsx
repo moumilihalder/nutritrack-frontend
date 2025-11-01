@@ -17,7 +17,7 @@ const FoodCaloriesList = () => {
     setFoods([]);
 
     try {
-      const apiKey = import.meta.env.VITE_API_KEY;
+     const API_KEY = import.meta.env.VITE_FOOD_API_KEY;
 
       const searchUrl = `https://api.nal.usda.gov/fdc/v1/foods/search?query=${encodeURIComponent(
         foodName
