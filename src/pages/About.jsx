@@ -6,8 +6,7 @@ const About = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
       <h1 className="text-3xl font-bold text-green-600 mb-4">About NutriTrack</h1>
       <p className="text-gray-700 max-w-lg text-center mb-8">
-        NutriTrack helps you monitor your health, create personalized diet plans,
-        and track your daily progress with ease.
+        NutriTrack helps you monitor your health and nutrition by providing tools to calculate your BMI, track your daily progress with ease.
       </p>
 
       <Link

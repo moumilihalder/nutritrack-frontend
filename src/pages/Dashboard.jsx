@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar.jsx";
 import BMICheck from "./BMICheck.jsx";
-import DietPlan from "./DietPlan.jsx";
 import TrackProgress from "./TrackProgress.jsx";
 import FoodCaloriesList from "./FoodCaloriesList.jsx";
 import WaterTracker from "../components/WaterTracker.jsx";
 import WorkoutTracker from "./WorkoutTracker.jsx";
-import CustomDietPlanner from "./CustomDietPlanner.jsx";
 import { useTheme } from "../hooks/useTheme.js";
 
 const Dashboard = () => {
@@ -116,12 +114,10 @@ const Dashboard = () => {
                     }
                   />
                   <Route path="bmi" element={<BMICheck />} />
-                  <Route path="diet" element={<DietPlan />} />
                   <Route path="progress" element={<TrackProgress />} />
                   <Route path="food-list" element={<FoodCaloriesList />} />
                   <Route path="water-tracker" element={<WaterTracker />} />
                   <Route path="workout-tracker" element={<WorkoutTracker />} />
-                  <Route path="custom-diet-planner" element={<CustomDietPlanner />} />
                 </Routes>
               </div>
             </div>

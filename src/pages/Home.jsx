@@ -70,17 +70,6 @@ const Home = () => {
                 </li>
                 <li>
                   <button
-                    onClick={() => handleFeatureClick("/dashboard/diet")}
-                    className={`block w-full text-left px-4 py-2 ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
-                      }`}
-                  >
-                    Diet Plan
-                  </button>
-                </li>
-                <li>
-                  <button
                     onClick={() => handleFeatureClick("/dashboard/progress")}
                     className={`block w-full text-left px-4 py-2 ${user
                         ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
@@ -207,24 +196,6 @@ const Home = () => {
                     BMI Check
                   </button>
                   <button
-                    onClick={() => handleFeatureClick("/dashboard/diet")}
-                    className={`block w-full px-4 py-2 text-center ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
-                      }`}
-                  >
-                    Diet Plan
-                  </button>
-                  <button
-                    onClick={() => handleFeatureClick("/dashboard/custom-diet-planner")}
-                    className={`block w-full px-4 py-2 text-center ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
-                      }`}
-                  >
-                    Custom Diet Planner
-                  </button>
-                  <button
                     onClick={() => handleFeatureClick("/dashboard/progress")}
                     className={`block w-full px-4 py-2 text-center ${user
                         ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
@@ -268,9 +239,6 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900 dark:text-gray-100">
             Track your nutrition,<br />weight, and health
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Personalized diet and fitness for everyone
-          </p>
           <button
             onClick={() => navigate(user ? "/dashboard" : "/login")}
             className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition"
@@ -296,15 +264,6 @@ const Home = () => {
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               Calculate your Body Mass Index (BMI) to assess whether you are
               underweight, normal, or overweight.
-            </p>
-          </div>
-
-          {/* Diet Plan */}
-          <div className="flex flex-col items-center md:items-start space-y-2">
-            <div className="text-3xl text-green-600">🍽️</div>
-            <h4 className="text-xl font-semibold">Diet Plan</h4>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Get personalized diet plans based on your BMI and health goals.
             </p>
           </div>
 

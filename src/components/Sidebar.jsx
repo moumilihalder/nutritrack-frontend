@@ -8,8 +8,6 @@ const Sidebar = ({ onLogout, onClose }) => {
   const menuItems = [
     { name: "Dashboard", path: "/dashboard" },
     { name: "BMI Check", path: "/dashboard/bmi" },
-    { name: "Diet Plan", path: "/dashboard/diet" },
-    { name: "Custom Diet Planner", path: "/dashboard/custom-diet-planner" },
     { name: "Track Progress", path: "/dashboard/progress" },
     { name: "Food Calories", path: "/dashboard/food-list" },
     { name: "Water Tracker", path: "/dashboard/water-tracker" },

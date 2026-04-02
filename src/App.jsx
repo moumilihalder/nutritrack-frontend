@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import BMICheck from "./pages/BMICheck.jsx";
-import DietPlan from "./pages/DietPlan.jsx";
 import TrackProgress from "./pages/TrackProgress.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -38,14 +37,6 @@ function App() {
           element={
             <ProtectRoute>
               <BMICheck />
-            </ProtectRoute>
-          }
-        />
-        <Route
-          path="/diet"
-          element={
-            <ProtectRoute>
-              <DietPlan />
             </ProtectRoute>
           }
         />
