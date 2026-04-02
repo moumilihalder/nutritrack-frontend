@@ -61,8 +61,8 @@ const Home = () => {
                   <button
                     onClick={() => handleFeatureClick("/dashboard/bmi")}
                     className={`block w-full text-left px-4 py-2 ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
+                      ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
+                      : "text-gray-400 cursor-not-allowed"
                       }`}
                   >
                     BMI Check
@@ -72,8 +72,8 @@ const Home = () => {
                   <button
                     onClick={() => handleFeatureClick("/dashboard/progress")}
                     className={`block w-full text-left px-4 py-2 ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
+                      ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
+                      : "text-gray-400 cursor-not-allowed"
                       }`}
                   >
                     Track Progress
@@ -83,8 +83,8 @@ const Home = () => {
                   <button
                     onClick={() => handleFeatureClick("/dashboard/food-list")}
                     className={`block w-full text-left px-4 py-2 ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
+                      ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
+                      : "text-gray-400 cursor-not-allowed"
                       }`}
                   >
                     Food Calories
@@ -94,8 +94,8 @@ const Home = () => {
                   <button
                     onClick={() => handleFeatureClick("/dashboard/water-tracker")}
                     className={`block w-full text-left px-4 py-2 ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
+                      ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
+                      : "text-gray-400 cursor-not-allowed"
                       }`}
                   >
                     Water Tracker
@@ -105,8 +105,8 @@ const Home = () => {
                   <button
                     onClick={() => handleFeatureClick("/dashboard/workout-tracker")}
                     className={`block w-full text-left px-4 py-2 ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
+                      ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
+                      : "text-gray-400 cursor-not-allowed"
                       }`}
                   >
                     Workout Tracker
@@ -189,8 +189,8 @@ const Home = () => {
                   <button
                     onClick={() => handleFeatureClick("/dashboard/bmi")}
                     className={`block w-full px-4 py-2 text-center ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
+                      ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
+                      : "text-gray-400 cursor-not-allowed"
                       }`}
                   >
                     BMI Check
@@ -198,8 +198,8 @@ const Home = () => {
                   <button
                     onClick={() => handleFeatureClick("/dashboard/progress")}
                     className={`block w-full px-4 py-2 text-center ${user
-                        ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
-                        : "text-gray-400 cursor-not-allowed"
+                      ? "hover:bg-green-50 hover:text-green-600 dark:hover:bg-gray-600"
+                      : "text-gray-400 cursor-not-allowed"
                       }`}
                   >
                     Track Progress
@@ -275,6 +275,16 @@ const Home = () => {
               Monitor your progress by tracking your daily calorie intake and weight.
             </p>
           </div>
+
+          {/* Food Calories */}
+          <div className="flex flex-col items-center md:items-start space-y-2">
+            <div className="text-3xl text-green-600">🍎</div>
+            <h4 className="text-xl font-semibold">Food Calories</h4>
+            <p className="text-gray-600 dark:text-gray-300 text-sm">
+              Explore calorie information of different foods and track your daily intake for a healthy lifestyle.
+            </p>
+          </div>
+          
         </div>
       </section>
     </div>
